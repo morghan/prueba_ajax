@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %title Ajax
+    = stylesheet_link_tag :all
+    = javascript_include_tag 'jquery-1.6.1.min.js', 'rails.js', 'application.js'
+    = csrf_meta_tag
+  %body
+    = link_to 'HOME', articulos_path
+    = yield

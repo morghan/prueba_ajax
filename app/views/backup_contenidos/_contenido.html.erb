@@ -1,0 +1,15 @@
+<div id="contenido_<%= contenido.id %>">
+  <% if (!contenido.imagen.nil?) %>
+    <img src="<%= contenido.imagen %>" alt="no tiene imagen"/>
+    <br />
+  <% end %>
+  <% if (!contenido.texto.nil?) %>
+    <label><b>Texto:</b></label> <br />
+    <%= contenido.texto %> <br />
+  <% end %>
+  <% if (!contenido.nil?) %>
+    <%= link_to 'Borrar', [contenido.articulo, contenido], :confirm => 'Seguro?', :method => :delete, :remote => true %>
+  <% end %>
+  <hr />
+</div>
+

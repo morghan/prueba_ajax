@@ -1,0 +1,6 @@
+%article{:id => "articulo_#{articulo.id}"}
+  %h2= articulo.titulo
+  %label Autor:
+  %span= articulo.autor
+  %br/
+  = links_articulo(articulo)

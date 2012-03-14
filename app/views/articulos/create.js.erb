@@ -1,0 +1,6 @@
+$('.form_articulo').fadeOut();
+cleanForm();
+var vistaArticulo = "<%= escape_javascript(render(@articulo)) %>";
+$('.form_articulo').after(vistaArticulo);
+$('#articulo_<%= @articulo.id %>').hide();
+$('#articulo_<%= @articulo.id %>').fadeIn(1000);

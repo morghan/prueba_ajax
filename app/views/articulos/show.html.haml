@@ -1,0 +1,21 @@
+%p#notice= notice
+%p
+  %b Titulo:
+  = @articulo.titulo
+%p
+  %b Autor:
+  = @articulo.autor
+= link_to 'Edit', edit_articulo_path(@articulo)
+%span= "|"
+= link_to 'Back', articulos_path
+%br/
+= link_to 'Nuevo Contenido', new_articulo_path, :id => "nuevo_contenido"
+%h1 Mostrando Contenidos
+%hr/
+#form_contenido{:style => "display:none;"}
+  %h2 Nuevo Contenido
+  = render :partial => "contenidos/form", :locals => { :is_remote => true }
+  = link_to 'Back', articulos_path, :id => 'back_contenido'
+  %hr/
+- if(!@articulo.contenidos.nil?)
+  = render :partial => "contenidos/contenido", :collection => @articulo.contenidos

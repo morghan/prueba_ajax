@@ -1,0 +1,19 @@
+= form_for(@articulo, :remote => is_remote) do |f|
+  - if @articulo.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@articulo.errors.count, "error")
+        prohibited this articulo from being saved:
+      %ul
+        - @articulo.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :titulo
+    %br/
+    = f.text_field :titulo
+  .field
+    = f.label :autor
+    %br/
+    = f.text_field :autor
+  .actions
+    = f.submit

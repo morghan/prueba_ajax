@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titulo:</b>
+  <%= @articulo.titulo %>
+</p>
+
+<p>
+  <b>Autor:</b>
+  <%= @articulo.autor %>
+</p>
+
+
+<%= link_to 'Edit', edit_articulo_path(@articulo) %> 
+<span>|</span>
+<%= link_to 'Back', articulos_path %>
+<br />
+<%= link_to 'Nuevo Contenido', new_articulo_path, :id => "nuevo_contenido" %>
+
+<h1>Mostrando Contenidos</h1>
+<hr />
+
+<div id="form_contenido" style="display:none;">
+  <h2>Nuevo Contenido</h2>
+  <%= render :partial => "contenidos/form", :locals => { :is_remote => true } %>
+  <%= link_to 'Back', articulos_path, :id => 'back_contenido' %>
+  <hr />
+</div>
+
+<% if(!@articulo.contenidos.nil?) %>
+  <%= render :partial => "contenidos/contenido", :collection => @articulo.contenidos %>
+<% end %>

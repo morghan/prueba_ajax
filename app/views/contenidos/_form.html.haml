@@ -1,0 +1,11 @@
+= form_for([@articulo, @articulo.contenidos.build], :remote => is_remote) do |f|
+  .field
+    = f.label :imagen
+    %br/
+    = f.text_field :imagen
+  .field
+    = f.label :texto
+    %br/
+    = f.text_area :texto
+  .actions
+    = f.submit

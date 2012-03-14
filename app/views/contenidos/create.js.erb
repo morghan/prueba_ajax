@@ -1,0 +1,6 @@
+$('#form_contenido').fadeOut();
+cleanForm2();
+var vistaContenido = "<%= escape_javascript(render(@contenido)) %>";
+$('#form_contenido').after(vistaContenido);
+$('#contenido_<%= @contenido.id %>').hide();
+$('#contenido_<%= @contenido.id %>').fadeIn(1000);
